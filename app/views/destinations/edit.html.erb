@@ -1,22 +1,12 @@
-<div class="header">
-  <div class="container">
-    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
-    <h1>BokenjiKan</h1>
-  </div>
+<div class="container destination">
+  <%= image_tag @destination.image %>
+  
+	<%= form_for(@destination) do |d| %>
+      <%= d.text_field :name, :size => "50" %> <br>
+      <%= d.text_area :description, :size => "100x10" %><br>
+  		<%= d.submit "Save", :class =>"link save" %>
+  <% end %>
+
 </div>
 
-<div class="destination">
-  <div class="container">
-    <%= image_tag @destination.image %>
-    
-    <!-- Your code here -->
-		<%= form_for(@destination) do |d| %>
-        <%= d.text_field :name %> <br>
-        <%= d.text_field :description %>
-    		<%= d.submit "Save", :class =>"btn" %>
-    <% end %>
-
-
-  </div>
-</div> 
 
